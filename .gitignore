@@ -1,0 +1,6 @@
+/src/main/kotlin/test/
+/.gradle/
+/.idea/
+/build/
+/gradle/
+/src/main/kotlin/tokens/
