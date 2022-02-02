@@ -19,12 +19,16 @@ fun getWorkDays(): List<String> {
             beforeLastDay = lastDay.minusDays(2)
         }
         DayOfWeek.MONDAY -> {
-            lastDay = today
+            lastDay = today.minusDays(2)
             beforeLastDay = lastDay.minusDays(3)
         }
+        DayOfWeek.TUESDAY -> {
+            lastDay = today.minusDays(1)
+            beforeLastDay = lastDay.minusDays(4)
+        }
         else -> {
-            lastDay = today
-            beforeLastDay = lastDay.minusDays(2)
+            lastDay = today.minusDays(1)
+            beforeLastDay = lastDay.minusDays(1)
         }
     }
     val to = lastDay.toString() + time

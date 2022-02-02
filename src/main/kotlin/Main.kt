@@ -1,6 +1,7 @@
 import kotlinx.coroutines.delay
 import patterns.noFalling
 import patterns.secondDayFalling
+import patterns.secondDayGrows
 import stocksdata.CandlesInPayload
 import stocksdata.PayloadCandles
 import java.io.File
@@ -15,9 +16,9 @@ suspend fun main(){
 
     val allStocks = getAllStocks()
     val stockSize = allStocks.size-1
-//    val grows = secondDayGrows(stockSize)
+    val grows = secondDayGrows(stockSize)
 //    val falls = secondDayFalling(stockSize)
-    val noFalls = noFalling(stockSize)
+//    val noFalls = noFalling(stockSize)
 //    val dateTime = LocalDateTime.now().format(DateTimeFormatter.ofPattern("y-M-d_HH-mm"))
 //
 //    println(dateTime)

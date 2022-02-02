@@ -21,10 +21,10 @@ suspend fun secondDayGrows(stockSize: Int = 30): MutableList<String>{
 //        println(i)
         var firstCandle = ListOfCandles(i.figi.toString())
 //        println(firstCandle)
-        if (firstCandle.size==2) {
+        if (firstCandle.size>=2) {
             delay(10)
-            var lastDay: CandlesInPayload = firstCandle[1]
-            var dayBefore: CandlesInPayload = firstCandle[0]
+            var lastDay: CandlesInPayload = firstCandle.last()
+            var dayBefore: CandlesInPayload = firstCandle.first()
             var percentLast = (lastDay.h - lastDay.l)*0.2
             var percentBefore = (dayBefore.h - dayBefore.l)*0.2
 
@@ -34,7 +34,7 @@ suspend fun secondDayGrows(stockSize: Int = 30): MutableList<String>{
                 && ((dayBefore.o) <= (dayBefore.l+percentBefore)) && ((dayBefore.c) > (dayBefore.o)) && ((dayBefore.c) >= (dayBefore.h-percentBefore))
                 && ((dayBefore.o) <= (lastDay.l))) {
                 println("${ i.ticker.toString() } , $dayBefore, $lastDay")
-                successStocks.add("\n ${i.ticker.toString()} \n${i.name}\n "+
+                successStocks.add("\n ${i.ticker.toString()}\n ${i.name}\n"+
                         "${dayBefore.time},o:${dayBefore.o}, c:${dayBefore.c}, l:${dayBefore.l}, h:${dayBefore.h}\n"+
                         "${lastDay.time}, o:${lastDay.o}, c:${lastDay.c}, l:${lastDay.l}, h:${lastDay.h}")
             }

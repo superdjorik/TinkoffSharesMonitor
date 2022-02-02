@@ -34,7 +34,7 @@ suspend fun secondDayFalling(stockSize: Int = 30): MutableList<String>{
                 && ((dayBefore.o) <= (dayBefore.h-percentBefore)) && ((dayBefore.c) < (dayBefore.o)) && ((dayBefore.c) >= (dayBefore.l+percentBefore))
                 && ((dayBefore.h) >= (lastDay.o))) {
                 println("${ i.ticker.toString() } , $dayBefore, $lastDay")
-                successStocks.add("\n ${i.ticker.toString()} \n${i.name}\n "+
+                successStocks.add("\n ${i.ticker.toString()} \n${i.name}\n"+
                         "${dayBefore.time},o:${dayBefore.o}, c:${dayBefore.c}, l:${dayBefore.l}, h:${dayBefore.h}\n"+
                         "${lastDay.time}, o:${lastDay.o}, c:${lastDay.c}, l:${lastDay.l}, h:${lastDay.h}")
             }

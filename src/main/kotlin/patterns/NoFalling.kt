@@ -39,7 +39,7 @@ suspend fun noFalling(stockSize: Int = 30): MutableList<String>{
                     ) {
                 println("${ i.ticker.toString() } , $dayBefore, $lastDay")
 //                println("${ i.ticker.toString() } , $dayBefore, $lastDay")
-                successStocks.add("\n ${i.ticker.toString()} \n${i.name}\n "+
+                successStocks.add("\n ${i.ticker.toString()} \n${i.name}\n"+
                         "${dayBefore.time},o:${dayBefore.o}, c:${dayBefore.c}, l:${dayBefore.l}, h:${dayBefore.h}\n"+
                         "${lastDay.time}, o:${lastDay.o}, c:${lastDay.c}, l:${lastDay.l}, h:${lastDay.h}")
             }

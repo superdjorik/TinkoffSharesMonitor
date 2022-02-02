@@ -37,6 +37,7 @@ suspend fun ListOfCandles(figi: String): List<CandlesInPayload> {
             append(HttpHeaders.Authorization, "Bearer $token")
         }
     }
+//    println(getCandlesReruest.call)
     client.close()
     val getCandlesText = getCandlesReruest.readText().toString()
     val getCandlesJson = Json.decodeFromString<ResponseCandles>(getCandlesText)
