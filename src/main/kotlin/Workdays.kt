@@ -28,7 +28,7 @@ fun getWorkDays(): List<String> {
         }
         else -> {
             lastDay = today.minusDays(1)
-            beforeLastDay = lastDay.minusDays(1)
+            beforeLastDay = lastDay.minusDays(2)
         }
     }
     val to = lastDay.toString() + time
