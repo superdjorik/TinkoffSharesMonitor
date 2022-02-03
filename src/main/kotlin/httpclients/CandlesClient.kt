@@ -9,7 +9,6 @@ import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
 import stocksdata.*
-//import stocksdata.Instruments
 import java.time.LocalDate
 
 // Функция выдает свечи, в запросе figi акции

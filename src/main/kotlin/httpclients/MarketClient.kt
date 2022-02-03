@@ -8,12 +8,11 @@ import io.ktor.client.statement.*
 import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.json.Json
 import stocksdata.GetStocks
-//import stocksdata.Instruments
 import stocksdata.Stock
 
 // Функция выдаёт список всех имеющихся акций
 suspend fun getAllStocks(): List<Stock> {
-// kotlinx_serializer
+    // kotlinx_serializer
     val client = HttpClient(CIO) {
         install(JsonFeature){
            serializer = KotlinxSerializer(Json)
@@ -23,6 +22,7 @@ suspend fun getAllStocks(): List<Stock> {
     val sandboxUrl = "https://api-invest.tinkoff.ru/openapi/sandbox/"
 //    val sandboxUrl = "https://api-invest.tinkoff.ru/openapi/"
     val allStocksUrl = "market/stocks"
+
     val getStocks: HttpResponse = client.get(sandboxUrl.plus(allStocksUrl)){
         headers {
             append(HttpHeaders.Accept, "application/json")
@@ -30,7 +30,7 @@ suspend fun getAllStocks(): List<Stock> {
         }
     }
     client.close()
-    val format = Json { prettyPrint = true }
+//    val format = Json { prettyPrint = true }
     val getStocksText = getStocks.readText().toString()
     val getStocksJson = Json.decodeFromString<GetStocks>(getStocksText)
     val listStocks: List<Stock> = getStocksJson.payload.instruments

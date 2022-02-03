@@ -1,8 +1,6 @@
 package stocksdata
 
-//import kotlinx.serialization.Serializable
-import kotlinx.serialization.*
-import kotlinx.serialization.descriptors.StructureKind
+import kotlinx.serialization.Serializable
 
 @Serializable
 data class GetStocks(
