@@ -11,7 +11,7 @@ import stocksdata.GetStocks
 import stocksdata.Stock
 
 // Функция выдаёт список всех имеющихся акций
-suspend fun getAllStocks(): List<Stock> {
+ suspend fun getAllStocks(): List<Stock> {
     // kotlinx_serializer
     val client = HttpClient(CIO) {
         install(JsonFeature){

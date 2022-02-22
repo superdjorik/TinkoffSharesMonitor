@@ -23,6 +23,7 @@ fun getWorkDays(): List<String> {
             beforeLastDay = lastDay.minusDays(3)
         }
         DayOfWeek.TUESDAY -> {
+//            lastDay = today.minusDays(1)
             lastDay = today.minusDays(1)
             beforeLastDay = lastDay.minusDays(4)
         }
