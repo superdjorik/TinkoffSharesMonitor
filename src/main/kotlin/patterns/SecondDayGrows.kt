@@ -16,7 +16,7 @@ suspend fun secondDayGrows(): MutableList<String>{
     val stocksList = getAllStocks()
     var successStocks: MutableList<String> = mutableListOf("2DayGrows Stocks:\n")
     for (i in stocksList){
-        delay(5)
+        delay(50)
 //        println(i)
         var firstCandle = ListOfCandles(i.figi.toString())
         println(firstCandle)

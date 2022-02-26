@@ -6,7 +6,7 @@ import java.time.LocalDateTime
 
 
 suspend fun main() {
-//    val path = "D:\\YandexDisk\\temp\\Tinkoff"
+    val path = ".//Yandex.Disk//Tinkoff"
     val dateTime = LocalDate.now()
 
     suspend fun <T> retryIO(
@@ -35,7 +35,6 @@ suspend fun main() {
     val grows = retryIO { secondDayGrows() }
 
 
-    File("${dateTime}_Растут.txt").writeText(grows.toString())
-    File("log.txt").appendText("${LocalDateTime.now()} Finished successfull\n")
-
+    File("${path}//${dateTime}_Растут.txt").writeText(grows.toString())
+    File("${path}//log.txt").appendText("${LocalDateTime.now()} Finished successfull\n")
 }
